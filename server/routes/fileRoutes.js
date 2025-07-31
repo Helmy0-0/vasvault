@@ -14,5 +14,5 @@ router.post('/upload', authenticate, upload.single('file'), uploadFile);
 router.get('/', authenticate, getFiles);
 router.get('/:id', authenticate, downloadFile);
 router.delete('/:id', authenticate, deleteFile);
-
+  
 export default router;
