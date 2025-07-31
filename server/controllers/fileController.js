@@ -8,7 +8,6 @@ export const uploadFile = async (req, res) => {
   try {
     const file = req.file;
     const userId = req.user.id;
-
     const saved = await prisma.file.create({
       data: {
         filename: file.originalname,
