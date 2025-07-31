@@ -20,7 +20,7 @@ export const authOptions: NextAuthOptions = {
 
         try {
           const response = await axios.post(
-            `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
+            `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/login`,
             {
               name: credentials.name,
               password: credentials.password,
