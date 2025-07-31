@@ -10,19 +10,18 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        name: { label: "name", type: "text", placeholder: "wignn" },
+        email: { label: "email", type: "text", placeholder: "wignn" },
         password: { label: "password", type: "password" },
       },
       async authorize(credentials) {
-        if (!credentials?.name || !credentials?.password) {
+        if (!credentials?.email || !credentials?.password) {
           return null;
         }
 
         try {
           const response = await axios.post(
-            `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/login`,
-            {
-              name: credentials.name,
+            `${process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000"}/api/auth/login`, {
+              email: credentials.email,
               password: credentials.password,
             }
           );
