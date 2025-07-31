@@ -64,11 +64,6 @@ export const authOptions: NextAuthOptions = {
         };
       }
 
-      // Access token has expired, try to update it
-      // Uncomment this if you have refresh token functionality
-      // return await refreshAccessToken(token);
-      
-      // For now, return token as is (user will need to login again)
       return token;
     },
     async session({ session, token }) {
@@ -87,7 +82,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
   session: {
-    strategy: "jwt", // Make sure to use JWT strategy
+    strategy: "jwt", 
   },
   // This is secret for the next auth
   secret: process.env.NEXTAUTH_SECRET,
