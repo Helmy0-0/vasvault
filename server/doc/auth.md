@@ -99,7 +99,7 @@ Content-Type: application/json
 ```
 
 
-## POST `/api/auth/user/:id`
+## GET `/api/auth/user/:id`
 
 ### Deskripsi
 mendapat user data
